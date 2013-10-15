@@ -1,0 +1,4 @@
+ghostbuster
+===========
+
+Ghost Template
