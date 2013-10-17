@@ -1,9 +1,18 @@
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// LESS VARIABLES
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-@base: #3a4145;
-@selection: #222222;
-@link: #4a4a4a;
-@link_hover: #57a3e8;
+// Colors:
 
+  @color_base: #3a4145;
+  @color_selection: #222222;
+  @color_link: #4a4a4a;
+  @color_link_hover: #57a3e8;
+  @color_heading: #50585d;
+  @color_background: #d6edff;
+
+// /LESS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
   font-family:'icons';
@@ -43,16 +52,16 @@ body {
   font-family:'Droid Serif', serif;
   font-size:2.0rem;
   line-height:1.6em;
-  color: @base;
+  color: @color_base;
 }
 ::-moz-selection {
-  color: @selection;
-  background:#d6edff;
+  color: @color_selection;
+  background:@color_background;
   text-shadow:none;
 }
 ::selection {
-  color: @selection;
-  background:#d6edff;
+  color: @color_selection;
+  background:@color_background;
   text-shadow:none;
 }
 h1 {
@@ -104,14 +113,14 @@ h6 {
   font-size:2rem;
 }
 a {
-  color: @link;
+  color: @color_link;
   transition:color ease 0.3s;
 }
 a:hover {
-  color: @link_hover;
+  color: @color_link_hover;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color:#50585d;
+  color:@color_heading;
 }
 p, ul, ol {
   margin:1.6em 0;
@@ -132,7 +141,7 @@ blockquote {
   box-sizing:border-box;
   margin:1.6em 0 1.6em -2.2em;
   padding:0 0 0 1.6em;
-  border-left: @link 0.4em solid;
+  border-left: @color_link 0.4em solid;
   p {
     margin:0.8em 0;
     font-style:italic;
@@ -462,7 +471,7 @@ table.plain tbody > tr:nth-child(odd) {
       color:#bbc7cc;
     }
     a:hover {
-      color:#50585d;
+      color:@color_heading;
     }
   }
 }
@@ -530,7 +539,7 @@ table.plain tbody > tr:nth-child(odd) {
     text-decoration:underline;
   }
   a:hover {
-    color:#50585d;
+    color:@color_heading;
   }
 }
 .poweredby .icon-ghost {
@@ -576,7 +585,7 @@ table.plain tbody > tr:nth-child(odd) {
   }
 }
 .subscribe:hover:before {
-  color:#50585d;
+  color:@color_heading;
 }
 .tooltip {
   opacity:0;
@@ -590,7 +599,7 @@ table.plain tbody > tr:nth-child(odd) {
   font-weight:bold;
   line-height:1em;
   text-align:center;
-  background:#50585d;
+  background:@color_heading;
   border-radius:20px;
   box-shadow:0 1px 4px rgba(0,0,0,0.1);
   transition:opacity 0.3s ease, top 0.3s ease;
@@ -599,7 +608,7 @@ table.plain tbody > tr:nth-child(odd) {
   content:"";
   border-width:5px 5px 0 5px;
   border-style:solid;
-  border-color:#50585d transparent;
+  border-color:@color_heading transparent;
   display:block;
   position:absolute;
   bottom:-4px;
