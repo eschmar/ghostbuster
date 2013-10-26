@@ -1,9 +1,8 @@
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// LESS VARIABLES
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// *******************************************
+// *  VARIABLES
+// *******************************************/
 
-// Colors:
-
+  // Colors:
   @color_base: #3a4145;
   @color_selection: #222222;
   @color_link: #4a4a4a;
@@ -11,41 +10,205 @@
   @color_heading: #50585d;
   @color_background: #d6edff;
 
-// /LESS
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // Breakpoints:
+  @desktop:     ~"only screen and (min-width: 1667px)";
+  @tablet:      ~"only screen and (min-width: 769px) and (max-width: 1024px)";
+  @mobile:      ~"only screen and (max-width: 768px)";
+  @non_mobile:  ~"only screen and (min-width: 769px)";
+  @non_desktop: ~"only screen and (max-width: 1666px)";
 
-.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
-  font-family:'icons';
-  speak:none;
-  font-style:normal;
-  font-weight:normal;
-  font-variant:normal;
-  text-transform:none;
-  line-height:1;
-  -webkit-font-smoothing:antialiased;
+// *******************************************
+// *  MIXINS
+// *******************************************/
+
+.clearfix() {
+  &:after {
+    content:"";
+    display:block;
+    clear:both;
+  }
+}
+
+.box-sizing() {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+
+.box_shadow(@shadow_x:3px, @shadow_y:3px, @shadow_rad:3px, @shadow_in:3px, @shadow_color:#888) {
+  box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+  -webkit-box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+  -moz-box-shadow:@shadow_x @shadow_y @shadow_rad @shadow_in @shadow_color;
+}
+
+.border-radius (@val) {
+  border-radius: @val;
+  -moz-border-radius: @val;
+  -webkit-border-radius: @val;
+}
+
+.box-shadow (@val) {
+  -webkit-box-shadow: @val;
+  -moz-box-shadow: @val;
+  -o-box-shadow: @val;
+  box-shadow: @val;
+}
+
+.transition(@selector:all, @animation:ease-in-out, @duration:.2s) {
+  -webkit-transition:@selector @animation @duration;
+  -moz-transition:@selector @animation @duration;
+  -o-transition:@selector @animation @duration;
+  transition:@selector @animation @duration;
+}
+
+// *******************************************
+// *  GENERAL
+// *******************************************/
+
+
+// *******************************************
+// *  HEADER
+// *******************************************/
+
+header.sidebar {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background:#303538 no-repeat center center;
+  background-size:cover;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    padding: 15px;
+    padding-bottom: 0;
+    margin: 0;
+    margin-top: 30px;
+    font-size:5rem;
+    letter-spacing:-1px;
+  }
+
+  section {
+    font-size: 1.5rem;
+  }
+
+}
+
+.inner {
+  position:relative;
+  width:80%;
+  max-width:700px;
+  margin:0 auto;
+}
+
+
+// *******************************************
+// *  MAIN
+// *******************************************/
+
+main.content {
+  outline: 0;
+  position: absolute;
+  left: 30%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #FFF;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media @desktop {
+  main.content {
+    left: 500px !important;
+  }
+}
+
+// *******************************************
+// *  FOOTER
+// *******************************************/
+
+footer {
+
+}
+
+/*.site-footer {
+  position:relative;
+  margin:8rem 0 0 0;
+  padding:4rem 0;
+  border-top:#ebf2f6 1px solid;
+  font-family:'Open Sans', sans-serif;
+  font-size:1.3rem;
+  line-height:1.7em;
+  color:#bbc7cc;
+  text-align:center;
+  background:#f7fafb;
+
+  a {
+    color:#bbc7cc;
+    text-decoration:underline;
+  }
+
+  a:hover {
+    color:@color_heading;
+  }
+}*/
+
+.poweredby .icon-ghost {
+  font-weight:700;
   text-decoration:none;
 }
 
-.icon-ghost:before {
-  content:"\e000";
+.poweredby .icon-ghost:hover {
+  text-decoration:none;
 }
 
-.icon-feed:before {
-  content:"\e001";
+.poweredby .icon-ghost:before {
+  font-size:1rem;
+  margin-right:0.2em;
 }
 
-.icon-twitter:before {
-  content:"\e002";
-  font-size:1.1em;
+.subscribe {
+  width:28px;
+  height:28px;
+  border:#ebf2f6 1px solid;
+  text-align:center;
+  line-height:2.4rem;
+  border-radius:50px;
+  background:#ffffff;
+  transition:box-shadow 0.5s;
 }
 
-.icon-google-plus:before {
-  content:"\e003";
+.subscribe:before {
+  color:#d2dee3;
+  font-size:10px;
+  position:absolute;
+  top:2px;
+  left:9px;
+  font-weight:bold;
+  transition:color 0.5s ease;
 }
 
-.icon-facebook:before {
-  content:"\e004";
+.subscribe:hover {
+  box-shadow:rgba(0,0,0,0.05) 0 0 0 3px;
+  transition:box-shadow 0.25s;
+
+  .tooltip {
+    opacity:1;
+    top:-33px;
+  }
 }
+
+.subscribe:hover:before {
+  color:@color_heading;
+}
+
+// *******************************************
+// *  CASPER
+// *******************************************/
 
 html {
   height:100%;
@@ -311,27 +474,10 @@ table.plain tbody > tr:nth-child(odd) {
   display:none;
 }
 
-.inner {
-  position:relative;
-  width:80%;
-  max-width:700px;
-  margin:0 auto;
-}
+
 .vertical {
   display:table-cell;
   vertical-align:middle;
-}
-
-#site-head {
-  position:relative;
-  display:table;
-  width:100%;
-  height:60%;
-  margin-bottom:5rem;
-  text-align:center;
-  color:#ffffff;
-  background:#303538 no-repeat center center;
-  background-size:cover;
 }
 
 #blog-logo img {
@@ -584,80 +730,7 @@ table.plain tbody > tr:nth-child(odd) {
   border-color:#9eabb3;
 }
 
-.site-footer {
-  position:relative;
-  margin:8rem 0 0 0;
-  padding:4rem 0;
-  border-top:#ebf2f6 1px solid;
-  font-family:'Open Sans', sans-serif;
-  font-size:1.3rem;
-  line-height:1.7em;
-  color:#bbc7cc;
-  text-align:center;
-  background:#f7fafb;
 
-  a {
-    color:#bbc7cc;
-    text-decoration:underline;
-  }
-
-  a:hover {
-    color:@color_heading;
-  }
-}
-
-.poweredby .icon-ghost {
-  font-weight:700;
-  text-decoration:none;
-}
-
-.poweredby .icon-ghost:hover {
-  text-decoration:none;
-}
-
-.poweredby .icon-ghost:before {
-  font-size:1rem;
-  margin-right:0.2em;
-}
-
-.subscribe {
-  width:28px;
-  height:28px;
-  position:absolute;
-  top:-14px;
-  left:50%;
-  margin-left:-15px;
-  border:#ebf2f6 1px solid;
-  text-align:center;
-  line-height:2.4rem;
-  border-radius:50px;
-  background:#ffffff;
-  transition:box-shadow 0.5s;
-}
-
-.subscribe:before {
-  color:#d2dee3;
-  font-size:10px;
-  position:absolute;
-  top:2px;
-  left:9px;
-  font-weight:bold;
-  transition:color 0.5s ease;
-}
-
-.subscribe:hover {
-  box-shadow:rgba(0,0,0,0.05) 0 0 0 3px;
-  transition:box-shadow 0.25s;
-
-  .tooltip {
-    opacity:1;
-    top:-33px;
-  }
-}
-
-.subscribe:hover:before {
-  color:@color_heading;
-}
 
 .tooltip {
   opacity:0;

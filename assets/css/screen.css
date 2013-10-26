@@ -1,33 +1,110 @@
-.icon-ghost,
-.icon-feed,
-.icon-twitter,
-.icon-google-plus,
-.icon-facebook {
-  font-family: 'icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+header.sidebar {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  max-width: 500px;
+  background: #303538 no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+header.sidebar h1 {
+  padding: 15px;
+  padding-bottom: 0;
+  margin: 0;
+  margin-top: 30px;
+  font-size: 5rem;
+  letter-spacing: -1px;
+}
+header.sidebar section {
+  font-size: 1.5rem;
+}
+.inner {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+main.content {
+  outline: 0;
+  position: absolute;
+  left: 30%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
+}
+@media only screen and (min-width: 1667px) {
+  main.content {
+    left: 500px !important;
+  }
+}
+/*.site-footer {
+  position:relative;
+  margin:8rem 0 0 0;
+  padding:4rem 0;
+  border-top:#ebf2f6 1px solid;
+  font-family:'Open Sans', sans-serif;
+  font-size:1.3rem;
+  line-height:1.7em;
+  color:#bbc7cc;
+  text-align:center;
+  background:#f7fafb;
+
+  a {
+    color:#bbc7cc;
+    text-decoration:underline;
+  }
+
+  a:hover {
+    color:@color_heading;
+  }
+}*/
+
+.poweredby .icon-ghost {
+  font-weight: 700;
   text-decoration: none;
 }
-.icon-ghost:before {
-  content: "\e000";
+.poweredby .icon-ghost:hover {
+  text-decoration: none;
 }
-.icon-feed:before {
-  content: "\e001";
+.poweredby .icon-ghost:before {
+  font-size: 1rem;
+  margin-right: 0.2em;
 }
-.icon-twitter:before {
-  content: "\e002";
-  font-size: 1.1em;
+.subscribe {
+  width: 28px;
+  height: 28px;
+  border: #ebf2f6 1px solid;
+  text-align: center;
+  line-height: 2.4rem;
+  border-radius: 50px;
+  background: white;
+  transition: box-shadow 0.5s;
 }
-.icon-google-plus:before {
-  content: "\e003";
+.subscribe:before {
+  color: #d2dee3;
+  font-size: 10px;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  font-weight: bold;
+  transition: color 0.5s ease;
 }
-.icon-facebook:before {
-  content: "\e004";
+.subscribe:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
+  transition: box-shadow 0.25s;
+}
+.subscribe:hover .tooltip {
+  opacity: 1;
+  top: -33px;
+}
+.subscribe:hover:before {
+  color: #50585d;
 }
 html {
   height: 100%;
@@ -273,26 +350,9 @@ table.plain tbody > tr:nth-child(odd) > th {
   visibility: hidden;
   display: none;
 }
-.inner {
-  position: relative;
-  width: 80%;
-  max-width: 700px;
-  margin: 0 auto;
-}
 .vertical {
   display: table-cell;
   vertical-align: middle;
-}
-#site-head {
-  position: relative;
-  display: table;
-  width: 100%;
-  height: 60%;
-  margin-bottom: 5rem;
-  text-align: center;
-  color: white;
-  background: #303538 no-repeat center center;
-  background-size: cover;
 }
 #blog-logo img {
   display: block;
@@ -507,70 +567,6 @@ table.plain tbody > tr:nth-child(odd) > th {
 .older-posts:hover,
 .newer-posts:hover {
   border-color: #9eabb3;
-}
-.site-footer {
-  position: relative;
-  margin: 8rem 0 0 0;
-  padding: 4rem 0;
-  border-top: #ebf2f6 1px solid;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.7em;
-  color: #bbc7cc;
-  text-align: center;
-  background: #f7fafb;
-}
-.site-footer a {
-  color: #bbc7cc;
-  text-decoration: underline;
-}
-.site-footer a:hover {
-  color: #50585d;
-}
-.poweredby .icon-ghost {
-  font-weight: 700;
-  text-decoration: none;
-}
-.poweredby .icon-ghost:hover {
-  text-decoration: none;
-}
-.poweredby .icon-ghost:before {
-  font-size: 1rem;
-  margin-right: 0.2em;
-}
-.subscribe {
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  margin-left: -15px;
-  border: #ebf2f6 1px solid;
-  text-align: center;
-  line-height: 2.4rem;
-  border-radius: 50px;
-  background: white;
-  transition: box-shadow 0.5s;
-}
-.subscribe:before {
-  color: #d2dee3;
-  font-size: 10px;
-  position: absolute;
-  top: 2px;
-  left: 9px;
-  font-weight: bold;
-  transition: color 0.5s ease;
-}
-.subscribe:hover {
-  box-shadow: rgba(0, 0, 0, 0.05) 0 0 0 3px;
-  transition: box-shadow 0.25s;
-}
-.subscribe:hover .tooltip {
-  opacity: 1;
-  top: -33px;
-}
-.subscribe:hover:before {
-  color: #50585d;
 }
 .tooltip {
   opacity: 0;
